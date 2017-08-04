@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5AS-aN-0ao">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--HLChartView-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController title="HLChartView" id="BYZ-38-t0r" customClass="AnimationTwoListViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IQK-VD-a5k">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AnimateTableViewCell" id="V47-vn-Qcs">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="V47-vn-Qcs" id="Lav-iE-fZA">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="iM2-dJ-zWs"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="akx-qv-7VK"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="IQK-VD-a5k" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="NQm-je-kCP"/>
+                            <constraint firstItem="IQK-VD-a5k" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="RMt-4s-Por"/>
+                            <constraint firstAttribute="trailing" secondItem="IQK-VD-a5k" secondAttribute="trailing" id="jxE-9k-Dsu"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="IQK-VD-a5k" secondAttribute="bottom" id="rIS-9w-971"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="HLChartView" id="USk-4Y-ldb"/>
+                    <connections>
+                        <outlet property="tableView" destination="IQK-VD-a5k" id="IAk-lq-Bfd"/>
+                        <segue destination="dqo-R4-GxT" kind="show" identifier="LineChartViewController" id="2CX-Fi-p3d"/>
+                        <segue destination="g0L-N1-81o" kind="show" identifier="PieChartViewController" id="kEG-hO-eBq"/>
+                        <segue destination="qnS-49-9ti" kind="show" identifier="HistogramViewController" id="drL-iv-Yul"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1124" y="-556"/>
+        </scene>
+        <!--Line Chart-->
+        <scene sceneID="4EQ-R3-zec">
+            <objects>
+                <viewController title="Line Chart" id="dqo-R4-GxT" customClass="LineChartViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6C9-4j-cGR"/>
+                        <viewControllerLayoutGuide type="bottom" id="Qa6-oo-a3L"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ffn-pI-fD9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ftF-qQ-Lfy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1897" y="-1093"/>
+        </scene>
+        <!--Histogram Chart-->
+        <scene sceneID="Fao-xO-79h">
+            <objects>
+                <viewController title="Histogram Chart" id="qnS-49-9ti" customClass="HistogramViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fgI-2V-EwL"/>
+                        <viewControllerLayoutGuide type="bottom" id="Lms-kr-aga"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cYe-W3-bvB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1YJ-z5-JRn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1846" y="331"/>
+        </scene>
+        <!--Pie Chart-->
+        <scene sceneID="uN3-i2-oUN">
+            <objects>
+                <viewController title="Pie Chart" id="g0L-N1-81o" customClass="PieChartViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="M2i-hj-JhY"/>
+                        <viewControllerLayoutGuide type="bottom" id="Pc6-Xp-LPd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Cj9-VU-3xN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ktZ-V7-PGT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2330" y="-403"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="PNq-b8-uZZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5AS-aN-0ao" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="i0v-PE-Ivf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="CeG-N4-Fl0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t6l-7v-rZA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="340" y="-543.77811094452773"/>
+        </scene>
+    </scenes>
+</document>
